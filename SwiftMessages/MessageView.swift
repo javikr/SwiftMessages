@@ -245,25 +245,24 @@ extension MessageView {
      - Parameter theme: The theme type to use.
      - Parameter iconStyle: The icon style to use. Defaults to `.Default`.
      */
-    public func configureTheme(_ theme: Theme, iconStyle: IconStyle = .default) {
-        let iconImage = iconStyle.image(theme: theme)
+    public func configureTheme(_ theme: Theme) {
         switch theme {
         case .info:
             let backgroundColor = UIColor(red: 225.0/255.0, green: 225.0/255.0, blue: 225.0/255.0, alpha: 1.0)
             let foregroundColor = UIColor.darkText
-            configureTheme(backgroundColor: backgroundColor, foregroundColor: foregroundColor, iconImage: iconImage)
+            configureTheme(backgroundColor: backgroundColor, foregroundColor: foregroundColor)
         case .success:
             let backgroundColor = UIColor(red: 97.0/255.0, green: 161.0/255.0, blue: 23.0/255.0, alpha: 1.0)
             let foregroundColor = UIColor.white
-            configureTheme(backgroundColor: backgroundColor, foregroundColor: foregroundColor, iconImage: iconImage)
+            configureTheme(backgroundColor: backgroundColor, foregroundColor: foregroundColor)
         case .warning:
             let backgroundColor = UIColor(red: 238.0/255.0, green: 189.0/255.0, blue: 34.0/255.0, alpha: 1.0)
             let foregroundColor = UIColor.white
-            configureTheme(backgroundColor: backgroundColor, foregroundColor: foregroundColor, iconImage: iconImage)
+            configureTheme(backgroundColor: backgroundColor, foregroundColor: foregroundColor)
         case .error:
             let backgroundColor = UIColor(red: 249.0/255.0, green: 66.0/255.0, blue: 47.0/255.0, alpha: 1.0)
             let foregroundColor = UIColor.white
-            configureTheme(backgroundColor: backgroundColor, foregroundColor: foregroundColor, iconImage: iconImage)
+            configureTheme(backgroundColor: backgroundColor, foregroundColor: foregroundColor)
         }
     }
     
@@ -275,8 +274,7 @@ extension MessageView {
      - Parameter backgroundColor: The background color to use.
      - Parameter foregroundColor: The foreground color to use.
      */
-    public func configureTheme(backgroundColor: UIColor, foregroundColor: UIColor, iconImage: UIImage? = nil, iconText: String? = nil) {
-        iconImageView?.image = iconImage
+    public func configureTheme(backgroundColor: UIColor, foregroundColor: UIColor, iconText: String? = nil) {
         iconLabel?.text = iconText
         iconImageView?.tintColor = foregroundColor
         let backgroundView = self.backgroundView ?? self
